@@ -1,0 +1,52 @@
+<section>
+
+    <div *ngIf="productList.length==0;else elseBlock">
+        <div id="head">
+            <div id="container">
+                
+                <img src="../../assets/images/g-9.jpg" alt="kan pai hauni" />
+                <p class="para-1">Your cart is empty</p>
+                <button (click)="shopmore()">Shop now</button>
+            </div>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <section id="zero">
+            <div id="first">
+                <!-- <div style="padding: 30px 20px 10px;">
+                    <h2>My Cart
+                        <button style="float: right; padding: 5px 7px; ">check</button>
+                        <input type="number" style="float: right; padding: 5px 7px;" placeholder="Enter delivery pincone" />
+                    </h2>
+                    <br />
+                </div> -->
+                <div *ngFor="let item of productList ; let productIndex=index;">
+                    <!-- <div>hello</div> -->
+                    <app-select-item [Item]="item" [index]="productIndex" (deleteItem)="removeitem($event)"
+                    (countIncreaseItem)="increaseItem($event)" (countDecreaseItem)="decreaseItem($event)">
+                    </app-select-item>
+               </div>
+            <div id="bala">
+                <button class="f-btn"  >PLACE ORDER</button>
+            </div>
+        </div>
+        <div id="second">
+            <h3 class="second-a">PRICE DETAILS</h3>
+            <!-- <hr> -->
+            <p class="second-a" *ngFor="let item of productList ; let productIndex=index;"> Price ({{productIndex+1}}
+                item)
+                <span class="price">{{item.price | number : '1.0-0'}}</span>
+            </p>
+            <p class="second-a">Discount <span class="price" style="color: rgb(15, 87, 45);">− ₹160</span>
+            </p>
+            <p class="second-a">Delivery Charges <span class="price" style="color: rgb(15, 87, 45);">FREE</span>
+            </p>
+            <hr />
+            <p class="second-a" style="font-size: 20px;">Total Amount <span class="price">₹{{TotalPrice | number :
+                '1.0-0'}}</span>
+            </p>
+            <!-- <p class="second-a" style="color: rgb(15, 87, 45);">You will save ₹160 on this order</p> -->
+        </div>
+    </section>
+</ng-template>
+</section>

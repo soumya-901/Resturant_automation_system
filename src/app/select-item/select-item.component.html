@@ -1,0 +1,19 @@
+<div class="row">
+
+    <div style="width: 70%;">
+        <img  src="{{Item.url}}" alt="" height="200px" width="300px" />
+        <div id="productNo" >
+            <button (click)="decrease()" [disabled]="no_Item<=1" class="productno">-</button>
+            <span >{{no_Item}}</span>
+            <button (click)="increase()" [disabled]="no_Item>=5" class="productno">+</button>
+        </div>
+    </div>
+    <div style="width: 30%;">
+        <h4 class="row-p" (click)="gotoProductDetails(Item.id)" >{{Item.itemname}}</h4>
+        <!-- <img src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png" alt="" style="width: 51px; margin:0px;height: 20px;"> -->
+        <!-- <p class="row-p"> Multicolor, Pack of 5</p> -->
+        <!-- <p class="row-p"> Seller:AABags</p> -->
+        <p class="row-p" ><span>&#x20B9;</span>{{Item.price}}</p>
+        <button (click)="removeitem()" id="specification">Remove</button>
+    </div>
+</div>

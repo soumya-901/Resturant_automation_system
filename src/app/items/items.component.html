@@ -1,0 +1,17 @@
+<section >
+    <h1 class="heading"> Most <span>popular</span> foods </h1>
+    <div class="popular" id="popular"  >
+            <div class="box-container" *ngFor ="let item of product" >
+                
+                <div class="box"  >
+                    <img src="{{item.url}}"  alt="check network connection">
+                    <span class="price"> ${{item.price}} </span>
+                    <h3>{{item.itemname}}</h3>
+                    <a  (click)="gotocart(item)" class="btn" routerlink="cart" >Add to cart</a>
+                    <!-- <a *ngIf="convert" (click)="gotocart(item)" class="btn">Go to cart</a> -->
+                </div>
+            </div>
+    
+    </div>
+</section>
+

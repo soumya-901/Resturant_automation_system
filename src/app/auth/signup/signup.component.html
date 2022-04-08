@@ -1,0 +1,26 @@
+<section class="home">
+
+</section>
+    <div class="login-box">
+        <!-- <img src="../../../assets/images/avatar.png" class="avatar"> -->
+        <h1>Signup Here</h1>
+        <form [formGroup]="signup" (ngSubmit)="signupuser()" >
+            <p>Username</p>
+            <input type="text" formControlName="name" placeholder="Enter Username">
+            <p>Email</p>
+            <input type="text" formControlName="email" placeholder="Enter Username">
+            <p>Phone</p>
+            <input type="text" formControlName="phone" placeholder="Enter Username">
+            <p>Address</p>
+            <input type="text" formControlName="address" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" formControlName="password"  placeholder="Enter Password">
+            <div class="error-text" *ngIf="!this.signup.valid && this.signup.touched  ">Invalid form</div>
+            <!-- <div class="error-text" *ngIf="isvalid">Invalid Credential</div> -->
+            <button type="submit">Sign Up</button> 
+        </form>
+        
+        <!-- <a href="#">Forget Password</a> -->
+        <div> Already have a account ? <span> <a (click)="gotosignin()">sign in</a></span></div>
+    </div>
+
